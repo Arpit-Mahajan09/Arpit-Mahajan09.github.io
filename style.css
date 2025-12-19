@@ -1,52 +1,91 @@
 * {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box; /* A common reset for consistent box model behavior */
+}
 
-margin: 0;
+.intro{
 
-padding: 0;
+  
+    background-image: url(background.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh   ;
 
-box-sizing: border-box; /* A common reset for consistent box model behavior */
+    display:flex;
+    flex-direction: column;
 
-
+    gap: 30px;
+    color: rgb(255, 255, 255);
+    list-style-type: none;
 }
 
 
+.hero-content{
+    flex:1;
+    display:flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
+
+.hero{
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 60px;
+    margin-bottom: 50px;
+    text-shadow:
+    -2px -2px 0 #555,
+     2px -2px 0 #555,
+    -2px  2px 0 #555,
+     2px  2px 0 #555,
+     0px  4px 10px rgba(109, 109, 109, 0.4);
+    
+}
+
+.hero-icons{
+    display: flex;
+    gap: 20px; 
+    font-size: 30px;
+    justify-content: center;
+}
+
+.hero-icons a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.hero-icons a:hover {
+    color: #767676;
+}
 
 
 .nav ul{
+    /* background-image: url(background.jpg); */
     padding: 12px;
     width: 100%;
     display: flex;
     flex-direction: row;
     gap: 30px;
-    justify-content: flex-end;
-    font-size: 18px;
-    background-color: rgb(94, 139, 187);
-    color: rgb(0, 0, 0);
+    justify-content: center;
+    font-size: 24px;
+    /* background-color: rgb(0, 0, 0); */
+    color: white;
     list-style-type: none;
 
     a{
         text-decoration:none;
-        color: rgb(0, 0, 0);
+        color: rgb(255, 254, 254);
     }
-
-    /* a:link{
-    color: rgb(0, 0, 0);
-    }
-
-    a:visited {
-    color: rgb(0, 0, 0);
-    } */
-
     a:hover {
         color: rgb(0, 0, 0);
-        background-color: rgb(150, 176, 204);
     }
-
     a:active {
         color: rgb(0, 0, 0);
-    }
-
+    }   
     a:focus {
         color: rgb(0, 0, 0);
         background-color: rgb(150, 176, 204);
@@ -55,95 +94,77 @@ box-sizing: border-box; /* A common reset for consistent box model behavior */
 
 
 
-.Body{
+body{
+    font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
+    line-height: 1.6;
+    width:100%;
+    text-align: center;
+}
+
+
+.about{
     font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
     line-height: 1.6;
     padding: 40px;
     width:100%;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    text-align: left;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.skills{
+    font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
+    line-height: 1.6;
+    padding: 40px;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+.contact{
+    font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
+    line-height: 1.6;
+    padding: 40 px;
+    width:100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 
 
-.footer{
+footer{
 
-margin-top: 50px;
+    margin-top: 50px;
+    padding: 12px;
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(55, 55, 55);
 
-padding: 12px;
+    a{
+        text-decoration:none;
+        color: rgb(55, 55, 55);
+    }
 
-width: 100%;
+    a:hover {
+        color: rgb(0, 0, 0);
+        background-color: rgb(150, 176, 204);
+    }
+        
+    a:active {
+        color: rgb(0, 0, 0);
+    }
 
-display: flex;
-
-flex-direction: row;
-
-justify-content: center;
-
-
-
-
-
-background-color: rgb(94, 139, 187);
-
-color: rgb(0, 0, 0);
-
-list-style-type: none;
-
-
-
-a{
-
-text-decoration:none;
-
-color: rgb(0, 0, 0);
-
-}
-
-/* a:link{
-
-color: rgb(0, 0, 0);
-
-}
-
-
-
-a:visited {
-
-color: rgb(0, 0, 0);
-
-} */
-
-
-
-a:hover {
-
-color: rgb(0, 0, 0);
-
-background-color: rgb(150, 176, 204);
-
-}
-
-
-
-a:active {
-
-color: rgb(0, 0, 0);
-
-}
-
-
-
-a:focus {
-
-color: rgb(0, 0, 0);
-
-background-color: rgb(150, 176, 204);
-
-}
-
-
+    a:focus {
+        color: rgb(0, 0, 0);
+        background-color: rgb(150, 176, 204);
+    }
 
 }
 
