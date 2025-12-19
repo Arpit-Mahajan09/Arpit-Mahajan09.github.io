@@ -68,10 +68,8 @@
 
 
 .nav ul{
-    
-    /* background-image: url(background.jpg); */
-    padding: 12px;
-    width: 100%;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* background-image: url(background.jpg); */  
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -89,13 +87,48 @@
     a:hover {
         color: rgb(0, 0, 0);
     }
-    a:active {
-        color: rgb(0, 0, 0);
-    }   
+    /* a:active {
+        color: orange;
+    }    */
     a:focus {
         color: rgb(0, 0, 0);
         background-color: rgb(150, 176, 204);
     }
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 7px 13px;
+    transition: background-color 0.5s;
+}
+
+nav ul li a.active {
+    color: rgb(255, 0, 128); 
+    border: 1px #555;
+    border-radius: 3px;
+}
+
+.nav {
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* background-image: url(background.jpg); */
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    font-weight:700;
+    font-size: 18px;
+    background-color: transparent;
+    transition: background-color 0.3s ease; 
+    position: fixed; 
+    width: 100%;
+    z-index: 1000;
+
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 
@@ -111,12 +144,16 @@ body{
 .about{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
     line-height: 1.6;
-    padding:40px 450px ;
+    padding:40px 60px ;
     font-size: 18px;
     width:100%;
     background-color: rgb(0, 0, 0);
     color: rgb(199, 199, 199);
     text-align:left;
+}
+.about p{
+    max-width: 800px;    
+    margin: 0 auto;
 }
 
 .skills{
@@ -131,12 +168,13 @@ body{
 
 .skills-container{
     padding: 10px 150px;
+    max-width: 1800px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 90px
+    gap: 70px
 }
 
 .skills button{
@@ -181,6 +219,10 @@ body{
     background-color: rgb(234, 234, 234);
     color: rgb(0, 0, 0);
     text-align: center;
+}
+
+.project-item{
+    display: flex
 }
 
 
@@ -229,12 +271,12 @@ body{
 
 
 footer ul{
-
-    padding: 12px;
+    padding: 20px;
+    font-size: 15px;
     width: 100%;
     background-color: rgb(0, 0, 0);
     color: rgb(55, 55, 55);
-
+    list-style-type: none;
     display: flex;
     flex-direction: row;
     gap: 20px;
