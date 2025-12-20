@@ -405,7 +405,11 @@ footer ul{
     width:100%;
     height: auto;
     inset: 0;
-    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    background-color: rgba(0,0,0,0.85); 
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+
 }
 .modalContent{
     background: rgb(25, 25, 25);
@@ -413,7 +417,21 @@ footer ul{
     max-width: 500px;
     width:90%;
     overflow: hidden;
+
+
+    /* transform: translateY(20px);
+    transition: transform 0.1s ease; */
 }
+
+.modal.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal.active .modalContent{
+    transform: scale(1) translateY(0);
+}
+
 
 .modal img{
     width: 100%;

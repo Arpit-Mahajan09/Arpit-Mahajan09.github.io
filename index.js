@@ -67,13 +67,14 @@ function UserDetails(i){
     };
 
     document.getElementById("modal").style.display = "flex";
+    modal.classList.add("active");
 
 }
 
 
 function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.style.display = "none";
+    document.getElementById("modal").classList.remove("active");
+
 }
 
 window.onclick = function(event) {
