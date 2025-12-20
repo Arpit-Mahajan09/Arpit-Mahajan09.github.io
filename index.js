@@ -45,3 +45,40 @@ document.addEventListener('DOMContentLoaded', () => {
         updateNav();
     });
 });
+
+
+const modal1 ={
+    H: "Personal Website",
+    Text: "Created personal website as a project to show resume.",
+    Languages: "HTML , JAVA , CSS",
+    Link: "https://arpit-mahajan09.github.io", 
+    Img: "images/image.png"
+}
+
+function UserDetails(i){
+    document.getElementById("modalH").textContent=i.H;
+    document.getElementById("modalText").textContent=i.Text;
+    document.getElementById("modalLanguage").textContent=i.Languages;
+    document.getElementById("modalimage").src = i.Img;
+
+
+    document.getElementById("details").onclick = () => {
+        window.open(i.Link, "_blank");
+    };
+
+    document.getElementById("modal").style.display = "flex";
+
+}
+
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target == modal) {
+        closeModal()
+    }
+}

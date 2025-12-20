@@ -87,12 +87,13 @@
 
     <section class="project" id="project">
         <h3> Project</h3>
-        <h1> Check out my creations.</h1>
+        <h1> Check out my creations</h1>
+        <br><br>
         <div class="project-grid">
-            <a href="https://arpit-mahajan09.github.io/" class="project-item"><img src="image.png">
+            <div class="project-item" onclick="UserDetails(modal1)"><img src="images/image.png">
                 <h1>Personal Website</h1>
                 <p>Web development</p>
-            </a>
+            </div>
         </div>
         
     </section>
@@ -128,6 +129,22 @@
         </ul>
         
     </footer>
+
+
+    <div class="modal" id="modal">
+        <div class="modalContent" id="modalContent">
+            <img id="modalimage" src="">
+            <h1 id="modalH"></h1>
+            <h2 id="modalText"></h2>
+            <h3 id="modalLanguage"></h3>
+        
+        <div class="modalFooter">
+             <button class="details" id="details" >DETAILS</button>
+            <button class="close" onclick="closeModal()">CLOSE</button>
+        
+        </div>
+        </div>
+    </div>
 
 </body>
 
