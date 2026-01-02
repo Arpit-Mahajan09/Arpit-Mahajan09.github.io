@@ -1,5 +1,5 @@
-import Data from "./timeline";
-import Modal from "./modal";
+import Data from "./timeline.js";
+import Modal from "./modal.js";
 
 let timeline=document.getElementById("timeline")
 let timelineHtml="";
@@ -18,14 +18,14 @@ timeline.innerHTML=timelineHtml
 
 let projectsPage=document.getElementById("project-grid")
 let projectCard=""
-Modal.forEach(item => {
+Modal.forEach((item,index )=> {
     projectCard+=`
         <div class="project-item" onclick="UserDetails(${item.id})"><img src="${item.Img}">
             <h1>${item.H}</h1>
             <p>${item.category}</p>
         </div> `
 });
-projectsPage.innerHTML=projectCard
+projectsPage.innerHTML=projectCard; 
 
 
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 window.UserDetails=function(index){
-    const i=Modaldata[index];
+    const i=Modal[index];
     document.getElementById("modalH").textContent=i.H;
     document.getElementById("modalText").textContent=i.Text;
     document.getElementById("modalLanguage").textContent=i.Languages;
@@ -117,6 +117,6 @@ window.onclick = function(event) {
     const modal = document.getElementById("modal");
     if (event.target == modal) {
         closeModal()
-        
+
     }
 }

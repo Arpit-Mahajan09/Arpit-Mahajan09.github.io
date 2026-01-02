@@ -9,8 +9,6 @@ const Modal=[{
     Img: "images/personal.png",
     Dep: ""
 }, 
-
-
 {
     id:2, 
 
