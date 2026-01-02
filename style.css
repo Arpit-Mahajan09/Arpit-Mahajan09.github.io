@@ -222,7 +222,26 @@ body{
 }
 
 
+.timeline{
+    padding:60px 20px 100px 20px;
+}
 
+.timeline-item {
+    text-align: left;
+    width: 30%;  
+}
+
+.timeline-item h1{
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timeline-item p{
+    text-align: left;
+    font-weight:lighter;
+    color: rgb(69, 69, 69); 
+}
 
 
 

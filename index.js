@@ -7,10 +7,10 @@ let timelineHtml="";
 Data.forEach(item => {
     timelineHtml+=`
         <div class="timeline-item">
-            <h1 class="timeline-data">${item.title}</h1>
-            <p class="timeline-data">${item.detail}</p>
-            <p class="timeline-data">${item.date}</p>
-            <i class="${item.iconSrc}"></i>
+            <h1 class="timelineTitle">${item.title}</h1>
+            <p class="timelineData">${item.detail}</p>
+            <p class="timelineDate">${item.date}</p>
+            <i class="timelineIcon" ${item.iconSrc}></i>
         </div> 
     `;
 });
@@ -20,8 +20,8 @@ let projectsPage=document.getElementById("project-grid")
 let projectCard=""
 Modal.forEach((item,index )=> {
     projectCard+=`
-        <div class="project-item" onclick="UserDetails(${item.id})"><img src="${item.Img}">
-            <h1>${item.H}</h1>
+        <div class="project-item" onclick="UserDetails(${item.id-1})"><img src="${item.Img}">
+            <h6>${item.H}</h6>
             <p>${item.category}</p>
         </div> `
 });
