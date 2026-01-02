@@ -1,22 +1,53 @@
+import Data from "./timeline";
+import Modal from "./modal";
+
+let timeline=document.getElementById("timeline")
+let timelineHtml="";
+
+Data.forEach(item => {
+    timelineHtml+=`
+        <div class="timeline-item">
+            <h1 class="timeline-data">${item.title}</h1>
+            <p class="timeline-data">${item.detail}</p>
+            <p class="timeline-data">${item.date}</p>
+            <i class="${item.iconSrc}"></i>
+        </div> 
+    `;
+});
+timeline.innerHTML=timelineHtml
+
+let projectsPage=document.getElementById("project-grid")
+let projectCard=""
+Modal.forEach(item => {
+    projectCard+=`
+        <div class="project-item" onclick="UserDetails(${item.id})"><img src="${item.Img}">
+            <h1>${item.H}</h1>
+            <p>${item.category}</p>
+        </div> `
+});
+projectsPage.innerHTML=projectCard
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav ul li a');
     const navBar = document.querySelector('nav');
     const sections = Array.from(document.querySelectorAll('section')); 
-    let sectionOffsets = [0, ...sections.map(section => section.offsetTop)]; 
+    let scroll = [0, ...sections.map(section => section.offsetTop)]; 
 
-    const getCurrentIndex = (scrollTop) => {
-        for (let i = 1; i < sectionOffsets.length; i++) {
-            if (scrollTop < sectionOffsets[i]) {
+    const curIndex = (scrollTop) => {
+        for (let i = 1; i < scroll.length; i++) {
+            if (scrollTop < scroll[i]) {
                 return i - 1;
             }
         }
-        return sectionOffsets.length - 1;
+        return scroll.length - 1;
     };
 
     let ticking = false;
-    const updateNav = () => {
+    const nav = () => {
         const scrollTop = window.pageYOffset;
-        const currentIndex = getCurrentIndex(scrollTop);
+        const currentIndex = curIndex(scrollTop);
 
         navLinks.forEach((link, index) => {
             link.classList.toggle('active', index === currentIndex);
@@ -26,49 +57,30 @@ document.addEventListener('DOMContentLoaded', () => {
             navBar.classList.toggle('scrolled', currentIndex > 0);
         }
 
-        console.log('ScrollTop:', scrollTop, 'CurrentIndex:', currentIndex, '(0=HOME,4=CONTACT)', 'Offsets:', sectionOffsets);
+        console.log('ScrollTop:', scrollTop, 'CurrentIndex:', currentIndex, '(0=HOME,4=CONTACT)', 'Offsets:', scroll);
 
         ticking = false;
     };
 
     window.addEventListener('scroll', () => {
         if (!ticking) {
-            requestAnimationFrame(updateNav);
+            requestAnimationFrame(nav);
             ticking = true;
         }
     });
 
-    updateNav();
+    nav();
 
 
     window.addEventListener('resize', () => {
-        sectionOffsets = [0, ...sections.map(section => section.offsetTop)];
-        updateNav();
+        scroll = [0, ...sections.map(section => section.offsetTop)];
+        nav();
     });
 });
 
 
-const modal1 ={
-    H: "Personal Website",
-    Text: "Created personal website as a project to show resume.",
-    Languages: "HTML , JAVA , CSS",
-    Link: "https://github.com/Arpit-Mahajan09/Arpit-Mahajan09.github.io", 
-    Img: "images/personal.png",
-    Dep: ""
-}
-
-
-const modal2={
-    H: "Weather Dashboard",
-    Text: "Created an app that shows weather at real time with openweather API",
-    Languages: "HTML , JAVA , CSS",
-    Link: "https://github.com/Arpit-Mahajan09/Weather", 
-    Img: "images/weather.png",
-    Dep: "https://weather-pi-tan-44.vercel.app/"
-}  
-
-
-function UserDetails(i){
+window.UserDetails=function(index){
+    const i=Modaldata[index];
     document.getElementById("modalH").textContent=i.H;
     document.getElementById("modalText").textContent=i.Text;
     document.getElementById("modalLanguage").textContent=i.Languages;
@@ -93,11 +105,10 @@ function UserDetails(i){
 
     document.getElementById("modal").style.display = "flex";
     document.getElementById("modal").classList.add("active");
-
 }
 
 
-function closeModal() {
+window.closeModal=function() {
     document.getElementById("modal").classList.remove("active");
     document.getElementById("modal").style.display="none";
 }
@@ -106,6 +117,6 @@ window.onclick = function(event) {
     const modal = document.getElementById("modal");
     if (event.target == modal) {
         closeModal()
-
+        
     }
 }
