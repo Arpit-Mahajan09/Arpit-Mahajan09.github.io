@@ -1,7 +1,7 @@
 const Data=[
         {
         id:3, 
-        iconSrc:"fa-solid fa-building-columns", 
+        iconSrc:"devicon-arduino-plain", 
         title:"Drone Hackathon Participation", 
         detail:"Participated in Drone Hackathon by Not Drones", 
         date:"January, 2026", 

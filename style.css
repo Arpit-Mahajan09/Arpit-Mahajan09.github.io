@@ -19,7 +19,8 @@ html {
     background-image: url(images/background.jpg);
     background-position: center;
     background-attachment: fixed;
-    background-size: cover;
+    object-fit: cover;
+    /* background-size: cover; */
     height: 100vh   ;
 
     display:flex;
@@ -295,6 +296,7 @@ body{
 
 
 
+
 .project{
     font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
     line-height: 1.6;
@@ -425,7 +427,6 @@ body{
     color: #ccc;           
     text-decoration: none;
 }
-
 
 
 
@@ -562,3 +563,7 @@ a.link:hover img{
 .modalFooter button:hover {
         color: rgb(255, 119, 0);
     }
+@media (max-width:815px) {
+
+    
+}
