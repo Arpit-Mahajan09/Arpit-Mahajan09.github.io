@@ -5,11 +5,20 @@ let timeline=document.getElementById("timeline")
 let timelineHtml="";
 
 Data.forEach(item => {
-    timelineHtml+=`
-        <div class="vl"></div>
+    // Create just an icon link if the certificate exists
+    const certIcon = item.certificateLink 
+        ? `<a href="${item.certificateLink}" target="_blank" rel="noopener noreferrer" class="cert-icon" title="View Certificate">
+             <i class="fa-solid fa-arrow-up-right-from-square"></i>
+           </a>` 
+        : '';
+
+    timelineHtml += `
         <div class="timeline-item">
             <div class="data">
-                <h1 class="timelineTitle">${item.title}</h1>
+                <div class="title-wrapper">
+                    <h1 class="timelineTitle">${item.title}</h1>
+                   ${certIcon}
+                </div>
                 <h5 class="timelineData">${item.detail}</h5>
             </div>
             <i class="timelineIcon ${item.iconSrc}"></i>
@@ -17,8 +26,7 @@ Data.forEach(item => {
         </div> 
     `;
 });
-timeline.innerHTML=timelineHtml
-
+timeline.innerHTML = timelineHtml;
 
 let projectsPage=document.getElementById("project-grid")
 let projectCard=""

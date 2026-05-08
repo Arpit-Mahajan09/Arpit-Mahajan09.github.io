@@ -20,7 +20,7 @@ html {
     background-position: center;
     background-attachment: fixed;
     object-fit: cover;
-    /* background-size: cover; */
+    background-size: cover;
     height: 100vh   ;
 
     display:flex;
@@ -139,7 +139,7 @@ nav.scrolled {
 
 
 body{
-    font-family: Impact,Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
+    font-family: Arial,sans-serif;/*'Geneva', Tahoma,Verdana, sans-serif*/
     line-height: 1.6;
     width:100%;
     text-align: center;
@@ -237,10 +237,11 @@ body{
     display: flex; 
     flex-direction: row-reverse;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px; 
     margin-bottom: 40px;
-    width: 30%;  
+    width: 100%;
+    max-width: 800px;  
     margin: 0 auto; 
 }
 
@@ -248,8 +249,8 @@ body{
     text-align: left;
     font-size: 24px;
     font-weight: bold;
-    flex: 50px 0 0 ; 
-    width: 400px;
+    /*flex: 50px 0 0 ; 
+    width: 400px;*/
 }
 
 .timeline-item p{
@@ -259,19 +260,93 @@ body{
     color: rgb(69, 69, 69); 
 }
 
-.timeline i{
+/* .timeline i{
     font-size: 24px;
     color: white; 
     background-color: black;
     padding: 15px; 
     border-radius: 50%; 
+} */
+i.timelineIcon {
+    font-size: 24px;
+    color: white; 
+    background-color: black;
+    flex: 0 0 60px; /* Prevents the circle from squishing */
+    width: 60px;
+    height: 60px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+}
+
+.timeline-item {
+    display: flex; 
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start; /* Keeps the icon aligned at the top */
+    gap: 30px; 
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto 50px auto; /* Restores the 40px gap between items */
+    position: relative; /* CRITICAL: Allows the line to position itself accurately */
+    z-index: 1; 
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 30px; 
+    bottom: -70px; 
+    left: 260px; 
+    width: 2px;
+    margin-left: -1px; 
+    background-color: #d3d3d3; 
+    z-index: -1; 
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+.timelineDate {
+    flex: 0 0 200px; 
+    margin-top: 18px; /* Nudges the text down to vertically center it with the icon */
 }
 
 .timeline h5{
+    font-size: medium;
     text-align: left;
     font-weight:lighter;
     color: rgb(69, 69, 69);
-    width: 400px;
+    /*width: 400px;*/
+}
+
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.cert-icon i {
+    font-size: 18px; 
+    color: #888;
+    background-color: transparent; /* Overrides any background */
+}
+
+.cert-icon {
+    color: #888; /* A subtle color so it doesn't overpower the title */
+    font-size: 0.6em; /* Scales it down relative to the h1 size */
+    transition: color 0.2s ease-in-out;
+}
+
+.cert-icon:hover {
+    color: #007BFF; /* Change this to your theme's primary color */
+}
+
+/* Optional: Removes margin from h1 so flexbox handles spacing perfectly */
+.timelineTitle {
+    margin: 0; 
 }
 
 

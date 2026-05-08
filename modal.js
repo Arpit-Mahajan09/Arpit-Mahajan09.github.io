@@ -19,7 +19,17 @@ const Modal=[{
     Link: "https://github.com/Arpit-Mahajan09/Weather", 
     Img: "images/weather.png",
     Dep: "https://weather-pi-tan-44.vercel.app/"
-}  
+},
+{
+    id: 3, 
+    H: "Obsidian Formatter (obsform)",
+    category: "CLI Tool / Python",
+    Text: "An LLM-powered CLI tool published on PyPI that cleans, corrects, and perfectly formats Obsidian notes, including native LaTeX math support.",
+    Languages: "Python",
+    Link: "https://github.com/Arpit-Mahajan09/obsform", 
+    Img: "images/obsform.png",
+    Dep: "https://pypi.org/project/obsform/"
+}
 ]
 
 

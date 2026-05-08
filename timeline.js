@@ -1,5 +1,21 @@
 const Data=[
-        {
+    {
+        id:5, 
+        iconSrc:"fa-brands fa-osi",
+        title:"Selected for FOSS Overflow", 
+        detail:"Selected for mentee in open source mentorship program FOSS Overflow by IIT Bhilai", 
+        date:"March, 2026", 
+        certificateLink: "https://drive.google.com/file/d/1RqeKqCIy4Ng9YPQDG-LFnH1KDCo5S0kq/view?usp=sharing"
+    },  
+    {
+        id:4, 
+        iconSrc:"fa-regular fa-lightbulb",
+        title:"Ideathon Participation", 
+        detail:"Reached Finals of Ideathon by E-Summit IITR ", 
+        date:"February, 2026", 
+        certificateLink: "https://drive.google.com/file/d/1RqeKqCIy4Ng9YPQDG-LFnH1KDCo5S0kq/view?usp=sharing"
+    },  
+    {
         id:3, 
         iconSrc:"devicon-arduino-plain", 
         title:"Drone Hackathon Participation", 
@@ -22,6 +38,5 @@ const Data=[
         date:"July, 2025", 
     }
 ]
-
 
 export default Data; 
